@@ -47,6 +47,33 @@
             width: 35px;
             height: 35px;
         }
+
+        /* Animación de salto suave */
+        @keyframes bounce {
+          0%, 100% {
+            transform: translateY(0);
+          }
+          50% {
+            transform: translateY(-10px);
+          }
+        }
+        
+        /* Animación de balanceo */
+        @keyframes swing {
+          0%, 100% {
+            transform: rotate(0deg);
+          }
+          50% {
+            transform: rotate(5deg);
+          }
+        }
+        
+        /* Aplicación a los íconos */
+        .animate-icon i {
+          animation: bounce 2s infinite ease-in-out;
+          /* Si prefieres balanceo, reemplaza 'bounce' por 'swing' */
+        }
+
     </style>
 </head>
 <body>
@@ -85,7 +112,7 @@
       <div class="col">
         <div class="card h-100 text-center">
           <div class="card-body">
-            <div class="icon mb-3">
+            <div class="icon mb-3 animate-icon">
               <i class="bi bi-printer-fill" style="font-size: 3rem; color: #25d366;"></i>
             </div>
             <h5 class="card-title">Impresión 3D</h5>
@@ -96,7 +123,7 @@
       <div class="col">
         <div class="card h-100 text-center">
           <div class="card-body">
-            <div class="icon mb-3">
+            <div class="icon mb-3 animate-icon">
               <i class="bi bi-brush-fill" style="font-size: 3rem; color: #f39c12;"></i>
             </div>
             <h5 class="card-title">Diseño 3D</h5>
@@ -107,7 +134,7 @@
       <div class="col">
         <div class="card h-100 text-center">
           <div class="card-body">
-            <div class="icon mb-3">
+            <div class="icon mb-3 animate-icon">
               <i class="bi bi-gear-fill" style="font-size: 3rem; color: #3498db;"></i>
             </div>
             <h5 class="card-title">Prototipado</h5>
@@ -118,6 +145,7 @@
     </div>
   </div>
 </section>
+
 
 
 <!-- Portfolio Section -->
