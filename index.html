@@ -141,11 +141,11 @@
 
         // Captura los datos del formulario
         const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
+        const email = document.getElementById('celular').value;
         const message = document.getElementById('message').value;
 
         // Crea el mensaje a enviar
-        const text = `📧 *Nuevo mensaje de contacto:*\n\n*Nombre:* ${name}\n*Correo:* ${email}\n*Mensaje:* ${message}`;
+        const text = `📧 *Nuevo mensaje de contacto:*\n\n*Nombre:* ${name}\n*Celular:* ${celular}\n*Mensaje:* ${message}`;
         
         // Envío del mensaje a Telegram
         fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
