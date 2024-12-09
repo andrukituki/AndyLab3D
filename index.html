@@ -48,31 +48,32 @@
             height: 35px;
         }
 
-        /* Animación de salto suave */
-        @keyframes bounce {
-          0%, 100% {
-            transform: translateY(0);
-          }
-          50% {
-            transform: translateY(-10px);
-          }
-        }
-        
-        /* Animación de balanceo */
-        @keyframes swing {
-          0%, 100% {
-            transform: rotate(0deg);
-          }
-          50% {
-            transform: rotate(5deg);
-          }
-        }
-        
-        /* Aplicación a los íconos */
-        .animate-icon i {
-          animation: bounce 2s infinite ease-in-out;
-          /* Si prefieres balanceo, reemplaza 'bounce' por 'swing' */
-        }
+    /* Animación de movimiento continuo (rebotar) */
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+    
+    /* Animación de movimiento suave (balanceo) */
+    @keyframes swing {
+      0%, 100% {
+        transform: rotate(0deg);
+      }
+      50% {
+        transform: rotate(5deg);
+      }
+    }
+    
+    /* Aplicar la animación continua */
+    .animate-icon i {
+      animation: bounce 2s infinite ease-in-out;
+      /* Si prefieres balanceo, usa 'swing' en lugar de 'bounce' */
+    }
+
 
     </style>
 </head>
@@ -145,6 +146,7 @@
     </div>
   </div>
 </section>
+
 
 
 
