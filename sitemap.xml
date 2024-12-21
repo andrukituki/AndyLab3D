@@ -1,16 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Página principal -->
+  <url>
+    <loc>https://www.andylab3d.com/</loc>
+    <lastmod>2024-12-21</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
 
+  <!-- Ejemplo de otras páginas (ajusta según tu estructura) -->
+<!--   <url>
+    <loc>https://www.andylab3d.com/servicios</loc>
+    <lastmod>2024-12-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.andylab3d.com/portafolio</loc>
+    <lastmod>2024-12-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.andylab3d.com/contacto</loc>
+    <lastmod>2024-12-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url> -->
 
-<url>
-  <loc>https://andylab3d.com/</loc>
-  <lastmod>2024-12-09T17:14:17+00:00</lastmod>
-</url>
-
-
+  <!-- Añade más páginas aquí según sea necesario -->
 </urlset>
