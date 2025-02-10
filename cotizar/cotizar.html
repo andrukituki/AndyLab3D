@@ -3,14 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Andy Lab 3D - Servicios de diseño e impresión 3D personalizados.">
+    <meta name="keywords" content="impresión 3D Perú, diseño 3D Perú, servicios de impresión 3D, prototipos 3D Perú, creación de prototipos, fabricación digital, modelado 3D, diseño industrial 3D, maquetas 3D, impresión 3D personalizada, prototipos rápidos, servicios 3D Lima, piezas en 3D, impresión aditiva, soluciones en diseño 3D, impresión 3D para empresas, fabricación de piezas personalizadas, producción 3D, prototipos funcionales, impresión 3D en Lima, impresión de piezas en 3D en Perú, diseño 3D para negocios en Perú, servicios de prototipado en Perú, impresión 3D para arquitectura en Perú, fabricación de maquetas en Lima, servicios de fabricación digital en Perú, impresión 3D accesible Perú, soluciones de diseño y prototipado Perú">
+    <meta name="author" content="Andres Figueroa">
+    <meta name="robots" content="index, follow">
+
+    <link rel="icon" href="../favicon.png">
+
+
     <title>Cotizador STL</title>
+
+    <link href="../dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../carousel.css" rel="stylesheet">
+    <link rel="stylesheet" href="../whatsapp.css">
+
+
+  
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three/examples/js/loaders/STLLoader.js"></script>
     <style>
-        body {
-            text-align: center;
-            font-family: Arial, sans-serif;
-        }
+
         #viewer {
             width: 100%;
             max-width: 400px;
@@ -23,7 +40,7 @@
             const inputFile = document.getElementById('stlFile');
             const priceDisplay = document.getElementById('price');
             const timeDisplay = document.getElementById('time');
-            const pricePerCm3 = 0.10; // Precio por cm³ (ajustable)
+            const pricePerCm3 = 0.39; // Precio por cm³ (ajustable)
             const layerHeight = 0.2; // Altura de capa en mm
             const printSpeed = 60; // Velocidad en mm/s
 
@@ -68,10 +85,14 @@
                     
                     let volume = calculateVolume(geometry) / 1000;
                     let price = volume * pricePerCm3;
+
+                    if (price<50){
+                        price = 50;
+                    }
                     let time = estimatePrintTime(geometry);
                     
-                    priceDisplay.textContent = `Costo estimado: $${price.toFixed(2)}`;
-                    timeDisplay.textContent = `Tiempo estimado: ${Math.max(time, 0).toFixed(2)} horas`;
+                    priceDisplay.textContent = `Precio estimado S/. ${price.toFixed(2)}`;
+                    timeDisplay.textContent = `Tiempo de fabricación: ${Math.max(time, 0).toFixed(2)} horas`;
                     
                     if (mesh) scene.remove(mesh);
                     
@@ -115,16 +136,128 @@
                 let timePerLayer = (width * depth) / printSpeed;
                 let totalTime = (layers * timePerLayer) / 3600;
                 
-                return Math.max(totalTime, 0);
+                if (Math.max(totalTime, 0)<1){
+                    return 1.5;
+                }
+                else{
+                    return Math.max(totalTime, 0);
+                }
             }
         });
     </script>
+            <!-- Google tag (gtag.js) -->
+            <script async src="https://www.googletagmanager.com/gtag/js?id=G-P3JXR9TM3C"></script>
+            <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+        
+            gtag('config', 'G-P3JXR9TM3C');
+            </script>
+         <!-- Google tag (gtag.js) -->
 </head>
 <body>
-    <h1>Cotizador de impresión 3D</h1>
-    <input type="file" id="stlFile" accept=".stl">
-    <p id="price">Costo estimado: $0.00</p>
-    <p id="time">Tiempo estimado: 0.00 horas</p>
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+          <!-- Div para agregar margen en x -->
+          <div class="container"> 
+          <a class="navbar-brand" href="../index.html">AndyLab3D</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="../index.html">Inicio<span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../index.html#servicios">Servicios</a>
+              </li>
+               <li class="nav-item">
+                <a class="nav-link" href="../index.html#portafolio">Proyectos</a>
+              </li> 
+              <li class="nav-item">
+                <a class="nav-link" href="#">Cotizador</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="../index.html">Blog</a>
+              </li>
+  
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Contacto
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="https://www.tiktok.com/@andylab3d"><i class="bi bi-tiktok"></i> Tiktok</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="https://www.instagram.com/andylab.3d"><i class="bi bi-instagram"></i> Instagram</a>
+                  </li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="https://wa.me/51989325422?text=%C2%A1Hola!%20Estoy%20interesado%20en%20sus%20servicios%20de%20dise%C3%B1o%20e%20impresi%C3%B3n%203D."><i class="bi bi-whatsapp"></i> Whatsapp</a></li>
+                </ul>
+              </li>
+  
+            </ul>
+  
+          </div>
+        </div>
+        </nav>
+      </header>
+
+      <main role="main">
+
+        
+  <div class="text-center py-5">
+    <h1 class="">Cotizador de impresión 3D</h1>
+
+    <input type="file" id="stlFile" accept=".stl" class="text-center py-4">
+    <h5 id="time" class="py-2">Tiempo de fabricación: 0.00 horas</h5>
+    <h3 id="price">Precio estimado: S/. 0.00</h3>
+</div>
     <div id="viewer"></div>
+
+    <hr class="featurette-divider">
+
+          <!-- FOOTER -->
+          <footer class="container">
+            <p class="float-right"><a href="#">Ir al inicio</a></p>
+            <p>&copy;2024 AndyLab3D. Todos los derechos reservados.</p>
+    
+            <div class="text-center">
+            <p class="mb-2">Síguenos en nuestras redes sociales:</p>
+            <a href="https://www.tiktok.com/@andylab3d" target="_blank" rel="noopener noreferrer" class="mx-2">
+                <i class="bi bi-instagram" style="font-size: 2rem; color: #e1306c;"></i>
+            </a>
+            <a href="https://www.tiktok.com/@andylab.3d" target="_blank" rel="noopener noreferrer" class="mx-2">
+                <i class="bi bi-tiktok" style="font-size: 2rem; color: #000;"></i>
+            </a>
+    
+          </div>
+          </footer>
+</main>
+   <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="assets/js/vendor/popper.min.js"></script>
+
+<!-- Bootstrap JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+    <script src="dist/js/bootstrap.min.js"></script>
+    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+    <script src="assets/js/vendor/holder.min.js"></script>
+
+    <!-- WhatsApp -->
+    <a href="https://wa.me/51989325422?text=¡Hola! Estoy interesado en sus servicios de diseño e impresión 3D." 
+      class="whatsapp-button" 
+      target="_blank" 
+      rel="noopener noreferrer">
+      <i class="bi bi-whatsapp"></i>
+    </a>
 </body>
 </html>
